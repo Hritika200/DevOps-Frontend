@@ -19,7 +19,12 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
+        working-directory: frontend-react
         run: npm install
+
+      - name: Build App
+        working-directory: frontend-react
+        run: npm run build
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
