@@ -25,7 +25,14 @@ jobs:
       - name: Build App
         working-directory: frontend-react
         run: npm run build
-
+        
+      - name: Snyk Scan
+        uses: snyk/actions/node@master
+        with:
+          command: test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5
         with:
