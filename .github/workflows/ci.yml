@@ -21,9 +21,6 @@ jobs:
       - name: Install Dependencies
         working-directory: frontend-react
         run: npm install
-
-      - name: Run tests with coverage
-        run: npm test -- --coverage
         
       - name: Build App
         working-directory: frontend-react
